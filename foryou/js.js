@@ -113,6 +113,6 @@ timeline
   .to(pills, {
     width: 10,
     height: 10,
-    x: 180, //66
-    y: "56.5vh", //50vh
+    x: 60, //66
+    y: "54.5vh", //50vh
   });
