@@ -174,3 +174,12 @@ h2:nth-of-type(2)::after {
   background-color: #f7ecc8;
 }
 
+.corner-image {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  width: 80px; /* Ubah ukuran sesuai kebutuhan */
+  height: auto;
+  z-index: 1000;
+  opacity: 0.8;
+}
