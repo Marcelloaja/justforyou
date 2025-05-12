@@ -1,0 +1,176 @@
+@import url("https://fonts.googleapis.com/css2?family=Fredoka+One&family=Poiret+One&family=Ultra&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: "Fredoka One", cursive;
+}
+html {
+  height: 100%;
+  --bg: #fe5e5e;
+  --color: #2d3a51;
+  --body: #2d3a51;
+}
+body {
+  height: 100%;
+  background-color: var(--body);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.container {
+  text-align: center;
+  width: 100%;
+  padding: 20px;
+}
+
+h2 {
+  text-align: center;
+  position: relative;
+  font-size: 76px;
+  --t: 1;
+  color: #f7ecc8;
+  top: -80px; /* geser naik */
+}
+
+h2 span:nth-of-type(2n) {
+  color: #c8f7c9;
+}
+h2::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: scaleX(var(--t));
+  background-color: var(--body);
+  transform-origin: left;
+}
+h2:nth-of-type(2)::after {
+  transform-origin: right;
+}
+
+.confetti {
+  width: 50px;
+  height: 50px;
+  border-radius: 50rem;
+  background-color: #1b263a;
+
+  position: absolute;
+  top: 48%; /* geser sedikit ke bawah dari tengah */
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.name {
+  position: absolute;
+  top: 68%; /* letakkan sedikit di atas confetti */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  color: var(--color);
+  width: 100%;
+  flex-wrap: wrap;
+  text-align: center;
+  font-size: 50px;
+  z-index: 100;
+}
+
+.name span {
+  font-family: "Poiret One", cursive;
+  margin: 0 4px;
+}
+
+.three {
+  margin-left: 10px;
+  width: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.three-half {
+  --d: 9px;
+  --l: 0;
+  --o: 0;
+  height: 32px;
+  top: 15%;
+  left: 100%;
+  position: absolute;
+  border-radius: 50rem;
+  width: 64px;
+  background-color: #e7dd4b;
+}
+.three-half.end {
+  position: relative;
+  width: 32px;
+  transform: none !important;
+  border-top-right-radius: 50rem;
+  border-bottom-right-radius: 50rem;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+  right: 0 !important;
+}
+.three-half.end::after {
+  opacity: 1;
+}
+.three-half.end:nth-of-type(2) {
+  margin-top: -4px;
+}
+.three-half:nth-of-type(2) {
+  margin-top: 0px;
+}
+.three-half::after {
+  content: "";
+  position: absolute;
+  opacity: var(--o);
+  height: calc(100% - var(--d));
+  width: calc(100% - var(--d) / 2);
+  left: var(--l);
+  background-color: var(--body);
+  border-radius: inherit;
+  top: calc(50% - (100% - var(--d)) / 2);
+}
+
+/* CSS untuk model phone */
+@media only screen and (max-width: 768px) {
+  h2 {
+    font-size: 36px;
+  }
+  .number {
+    width: auto;
+    font-size: 40px;
+  }
+}
+
+/* CSS untuk model tablet */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  h2 {
+    font-size: 56px;
+  }
+  .number {
+    width: auto;
+    font-size: 60px;
+  }
+}
+
+#flowerButton {
+  position: absolute;
+  top:85%; /* letakkan sedikit di bawah confetti */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 12px 24px;
+  font-size: 16px;
+  background-color: #e7dd4b;
+  color: #2d3a51;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  z-index: 50; /* pastikan di atas elemen lain */
+}
+#flowerButton:hover {
+  background-color: #f7ecc8;
+}
+
